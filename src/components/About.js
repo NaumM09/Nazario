@@ -1,6 +1,7 @@
 import React from 'react';
 import { CheckCircle, Globe, ShieldCheck, Users, Target, Eye, Heart } from 'lucide-react';
 import "../styles/About.css";
+import serviceImage from "../assets/serviceImage.png"
 
 const About = () => {
   const values = [
@@ -89,30 +90,26 @@ const About = () => {
           </div>
           
           <div className="about-image">
-            <div className="about-placeholder">
-              <div style={{ textAlign: 'center', position: 'relative', zIndex: 10 }}>
-                <Users size={80} style={{ color: '#C8A044', opacity: 0.5, marginBottom: '16px' }} />
-                <p style={{ color: '#9CA3AF', fontSize: '14px' }}>About Image Placeholder</p>
-                <p style={{ color: '#6B7280', fontSize: '12px' }}>Team Photo / Office / African Tech Hub</p>
-              </div>
+            <div className="about-placeholder" style={{ position: 'relative', overflow: 'hidden' }}>
+              {/* Main Image */}
+              <img 
+                src={serviceImage} 
+                alt="Nazairo Technologies Team"
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '16px'
+                }}
+              />
               
-              {/* Africa continent silhouette overlay */}
+              {/* Overlay with gradient for better text visibility */}
               <div style={{
                 position: 'absolute',
                 inset: 0,
-                opacity: 0.2,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}>
-                <svg viewBox="0 0 200 200" style={{ width: '200px', height: '200px' }}>
-                  <path 
-                    d="M100 20C120 25 140 35 150 50C160 70 165 90 160 110C155 130 145 145 130 155C115 165 100 170 85 165C70 160 55 150 45 135C35 120 30 100 35 80C40 60 55 45 75 35C85 30 95 22 100 20Z" 
-                    fill="currentColor" 
-                    style={{ color: 'rgba(200, 160, 68, 0.2)' }}
-                  />
-                </svg>
-              </div>
+                background: 'linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(200,160,68,0.2) 100%)',
+                borderRadius: '16px'
+              }} />
               
               {/* Floating Elements */}
               <div className="floating-element top-left">

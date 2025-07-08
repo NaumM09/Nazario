@@ -5,49 +5,50 @@ const Partners = () => {
   const partners = [
     { 
       name: "NetApp", 
-      logo: "https://ibb.co/sJHFtWt2" 
+      logo: "https://i.ibb.co/sJHFtWt/netapp.png" 
     },
     { 
       name: "Cloudera", 
-      logo: "https://ibb.co/Qvt1n0PB" 
+      logo: "https://i.ibb.co/Qvt1n0P/cloudera.png" 
     },
     { 
       name: "Huawei", 
-      logo: "https://ibb.co/jvsgKcwg" 
+      logo: "https://i.ibb.co/jvsgKcw/huawei.png" 
     },
     { 
       name: "Octopus Technologies", 
-      logo: "https://ibb.co/qYdxKcfh" 
+      logo: "https://i.ibb.co/qYdxKcf/octopus.png" 
     },
     { 
       name: "PTPI Group", 
-      logo: "https://via.placeholder.com/200x100/dc2626/ffffff?text=PTPI+Group" 
+      logo: "https://ibb.co/5x1ZxTT1" 
     },
     { 
       name: "Fujitsu", 
-      logo: "https://companieslogo.com/img/orig/6702.T-f96c4b8e.png" 
+      logo: "https://ibb.co/gLYmTsft" 
     },
     { 
       name: "Lenovo", 
-      logo: "https://companieslogo.com/img/orig/LNVGY-8e0ba0f7.png" 
+      logo: "https://ibb.co/8LwVyhWH" 
     },
     { 
       name: "Blue Turtle", 
-      logo: "https://via.placeholder.com/200x100/0ea5e9/ffffff?text=Blue+Turtle" 
+      logo: "https://ibb.co/1tkvrRXW" 
     },
     { 
       name: "ETS", 
-      logo: "https://via.placeholder.com/200x100/16a34a/ffffff?text=ETS" 
+      logo: "https://ibb.co/F4PMBS4Q" 
     },
     { 
       name: "RDC Technology", 
-      logo: "https://via.placeholder.com/200x100/7c3aed/ffffff?text=RDC+Tech" 
+      logo: "https://ibb.co/358rFWWP" 
     }
   ];
 
   return (
     <section id="partners" className="section section-dark">
       <div className="container">
+        <h2 className="section-title">Trusted Partners</h2>
         {/* Partner Logos Grid - No Text */}
         <div className="minimal-partners-grid">
           {partners.map((partner, index) => (

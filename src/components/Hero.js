@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Server, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import "../styles/Hero.css";
+import heroImage from "../assets/heroImage.png";
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
@@ -103,7 +104,7 @@ const Hero = () => {
           >
             <div className="hero-image-container">
               <img 
-                src="/assets/hero-image.jpg" 
+                src={heroImage}
                 alt="Nazairo Technologies - Modern IT Infrastructure"
                 className="hero-image"
                 onError={(e) => {
@@ -133,7 +134,6 @@ const Hero = () => {
           transition={{ duration: 0.6, delay: 1.2 }}
         >
           <div className="scroll-line"></div>
-          <div className="scroll-text">Scroll to explore</div>
         </motion.div>
       </div>
     </section>
