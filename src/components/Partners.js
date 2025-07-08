@@ -41,7 +41,7 @@ const Partners = () => {
     },
     { 
       name: "RDC Technology", 
-      logo: "https://i.ibb.co/4wDmSMM0/rdc.png" 
+      logo: "https://i.ibb.co/5g0XQrVh/RDP.png" 
     }
   ];
 
