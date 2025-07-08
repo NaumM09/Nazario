@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import logo from ".././assets/naza_logo.svg" ;
 import ".././styles/Header.css";
 
-const Header = ({ activeSection, setActiveSection }) => {
+const Header = ({ activeSection, setActiveSection, onContactClick }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -18,6 +18,16 @@ const Header = ({ activeSection, setActiveSection }) => {
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
     setActiveSection(sectionId);
+    setIsMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    if (onContactClick) {
+      onContactClick(); // Navigate to contact page
+    } else {
+      // Fallback to scrolling if navigation function isn't provided
+      scrollToSection('contact');
+    }
     setIsMenuOpen(false);
   };
 
@@ -63,7 +73,7 @@ const Header = ({ activeSection, setActiveSection }) => {
             <li>
               <button 
                 className="btn btn-primary"
-                onClick={() => scrollToSection('contact')}
+                onClick={handleContactClick}
               >
                 Contact
               </button>
@@ -94,7 +104,7 @@ const Header = ({ activeSection, setActiveSection }) => {
               <li>
                 <button 
                   className="btn btn-primary"
-                  onClick={() => scrollToSection('contact')}
+                  onClick={handleContactClick}
                 >
                   Contact
                 </button>

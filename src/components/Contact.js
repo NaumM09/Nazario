@@ -1,292 +1,237 @@
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Clock, 
-  MessageCircle, 
-  ArrowRight,
-  Star,
-  Users,
-  Award,
-  ShieldCheck
-} from 'lucide-react';
+import { Building2, Smartphone, AtSign, Calendar, Send, CheckCircle2, MapPin } from 'lucide-react';
+import "../styles/Contact.css";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
+    phone: '',
     service: '',
     message: ''
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-    alert('Thank you for your message! We will get back to you soon.');
+    setIsLoading(true);
+    
+    // Simulate form submission
+    setTimeout(() => {
+      setIsLoading(false);
+      setIsSubmitted(true);
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      }, 3000);
+    }, 1000);
   };
 
   const contactInfo = [
     {
-      icon: <Mail size={24} />,
-      title: "Email",
-      details: ["info@nazairotech.com", "support@nazairotech.com"]
+      icon: <Building2 />,
+      title: "Our Location",
+      details: ["123 Business Street", "Johannesburg, Gauteng 2000", "South Africa"]
     },
     {
-      icon: <Phone size={24} />,
-      title: "Phone", 
-      details: ["+27 (0) 11 234 5678", "+27 (0) 87 550 7890"]
+      icon: <Smartphone />,
+      title: "Phone Numbers",
+      details: ["+27 11 123 4567", "+27 82 987 6543"]
     },
     {
-      icon: <MapPin size={24} />,
-      title: "Address",
-      details: ["123 Technology Drive", "Johannesburg, 2000", "South Africa"]
+      icon: <AtSign />,
+      title: "Email Address",
+      details: ["info@nazairotechnologies.com", "support@nazairotechnologies.com"]
     },
     {
-      icon: <Clock size={24} />,
-      title: "Operating Hours",
-      details: ["Mon - Fri: 8:00 AM - 6:00 PM", "Sat: 9:00 AM - 2:00 PM", "24/7 Emergency Support"]
+      icon: <Calendar />,
+      title: "Business Hours",
+      details: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 2:00 PM", "Sunday: Closed"]
     }
   ];
 
-  const whyChooseUs = [
-    { icon: <Star size={20} />, text: "Certified by leading technology partners" },
-    { icon: <Users size={20} />, text: "500+ satisfied clients across Africa" },
-    { icon: <Award size={20} />, text: "10+ years of proven excellence" },
-    { icon: <ShieldCheck size={20} />, text: "99.9% uptime guarantee" }
+  const services = [
+    "Cloud Infrastructure",
+    "Cybersecurity Solutions",
+    "Data Analytics",
+    "Digital Transformation",
+    "IT Consulting",
+    "Managed Services",
+    "Software Development",
+    "Other"
   ];
 
   return (
-    <section id="contact" className="section section-black">
+    <section id="contact" className="contact-section">
       <div className="container">
-        <div className="text-center mb-8">
-          <h2 className="section-title">
-            Get In <span className="text-yellow">Touch</span>
-          </h2>
-          <p className="section-subtitle">
-            Ready to transform your business with cutting-edge IT solutions? Let's discuss how we can help accelerate your growth.
+        {/* Header */}
+        <div className="contact-header">
+          <h1 className="contact-title">Get In Touch</h1>
+          <p className="contact-subtitle">
+            Ready to transform your business with cutting-edge technology? 
+            Let's discuss how we can help you achieve your goals.
           </p>
         </div>
-        
+
         <div className="contact-content">
+          {/* Contact Information Cards */}
+          <div className="contact-info-grid">
+            {contactInfo.map((info, index) => (
+              <div key={index} className="contact-info-card">
+                <div className="contact-icon">
+                  {info.icon}
+                </div>
+                <h3 className="contact-info-title">{info.title}</h3>
+                <div className="contact-info-details">
+                  {info.details.map((detail, idx) => (
+                    <p key={idx}>{detail}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
           {/* Contact Form */}
-          <div>
-            <div style={{
-              background: 'rgba(17, 24, 39, 0.5)',
-              border: '1px solid rgba(200, 160, 68, 0.2)',
-              borderRadius: '16px',
-              padding: '32px'
-            }}>
-              <h3 style={{ 
-                fontSize: '1.5rem', 
-                fontWeight: 'bold', 
-                marginBottom: '24px' 
-              }}>
-                Send Us a Message
-              </h3>
+          <div className="contact-form-section">
+            <div className="contact-form-container">
+              <h2 className="form-title">Send Us a Message</h2>
               
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label className="form-label">Full Name</label>
-                  <input 
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="form-input"
-                    placeholder="Your full name"
-                    required
-                  />
+              {isSubmitted ? (
+                <div className="success-message">
+                  <CheckCircle2 />
+                  <h3>Message Sent Successfully!</h3>
+                  <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
                 </div>
-                
-                <div className="form-group">
-                  <label className="form-label">Email Address</label>
-                  <input 
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="form-input"
-                    placeholder="your.email@company.com"
-                    required
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label className="form-label">Company</label>
-                  <input 
-                    type="text"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className="form-input"
-                    placeholder="Your company name"
-                  />
-                </div>
-                
-                <div className="form-group">
-                  <label className="form-label">Service Interest</label>
-                  <select 
-                    name="service"
-                    value={formData.service}
-                    onChange={handleInputChange}
-                    className="form-select"
-                    required
+              ) : (
+                <form onSubmit={handleSubmit} className="contact-form">
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="name">Full Name *</label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        placeholder="John Doe"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">Email Address *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        placeholder="john@company.com"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="company">Company</label>
+                      <input
+                        type="text"
+                        id="company"
+                        name="company"
+                        value={formData.company}
+                        onChange={handleChange}
+                        placeholder="Your Company"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="phone">Phone Number</label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        placeholder="+27 82 123 4567"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="service">Service Interest</label>
+                    <select
+                      id="service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                    >
+                      <option value="">Select a service</option>
+                      {services.map((service, index) => (
+                        <option key={index} value={service}>{service}</option>
+                      ))}
+                    </select>
+                  </div>
+
+                  <div className="form-group">
+                    <label htmlFor="message">Message *</label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows="5"
+                      placeholder="Tell us about your project or requirements..."
+                    ></textarea>
+                  </div>
+
+                  <button 
+                    type="submit" 
+                    className="submit-btn"
+                    disabled={isLoading}
                   >
-                    <option value="">Select a service</option>
-                    <option value="managed-it">Managed IT Services</option>
-                    <option value="cloud-storage">Cloud & Storage Solutions</option>
-                    <option value="network-monitoring">Network Monitoring</option>
-                    <option value="backup-recovery">Backup & Recovery</option>
-                    <option value="it-support">IT Support & Consulting</option>
-                    <option value="performance-optimization">Performance Optimization</option>
-                  </select>
-                </div>
-                
-                <div className="form-group">
-                  <label className="form-label">Message</label>
-                  <textarea 
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="form-textarea"
-                    placeholder="Tell us about your IT needs and challenges..."
-                    required
-                  ></textarea>
-                </div>
-                
-                <button 
-                  type="submit"
-                  className="btn btn-primary btn-large"
-                  style={{ width: '100%' }}
-                >
-                  Send Message <ArrowRight size={20} />
-                </button>
-              </form>
+                    {isLoading ? (
+                      <>
+                        <div className="loading-spinner"></div>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send />
+                        Send Message
+                      </>
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
-          
-          {/* Contact Information */}
-          <div className="contact-info">
-            <div>
-              <h3 style={{ 
-                fontSize: '1.5rem', 
-                fontWeight: 'bold', 
-                marginBottom: '24px' 
-              }}>
-                Contact Information
-              </h3>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                {contactInfo.map((item, index) => (
-                  <div key={index} className="contact-item">
-                    <div className="contact-icon">
-                      {item.icon}
-                    </div>
-                    <div className="contact-details">
-                      <h3>{item.title}</h3>
-                      {item.details.map((detail, detailIndex) => (
-                        <p key={detailIndex} style={{
-                          color: item.title === "Operating Hours" && detail.includes("24/7") 
-                            ? "#C8A044" 
-                            : "#9CA3AF",
-                          fontWeight: detail.includes("24/7") ? "500" : "normal"
-                        }}>
-                          {detail}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Quick Response */}
-            <div style={{
-              background: 'linear-gradient(135deg, rgba(200, 160, 68, 0.1), rgba(59, 130, 246, 0.1))',
-              borderRadius: '16px',
-              padding: '32px',
-              border: '1px solid rgba(200, 160, 68, 0.2)'
-            }}>
-              <h4 style={{ 
-                fontSize: '1.25rem', 
-                fontWeight: '600', 
-                marginBottom: '16px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '8px'
-              }}>
-                <MessageCircle size={24} style={{ color: '#C8A044' }} />
-                Quick Response
-              </h4>
-              <p style={{ 
-                color: '#9CA3AF', 
-                marginBottom: '24px' 
-              }}>
-                Need immediate assistance? Our support team is standing by 24/7 to help with any urgent IT issues or emergencies.
-              </p>
-              <div style={{ 
-                display: 'flex', 
-                flexDirection: 'column', 
-                gap: '16px' 
-              }}>
-                <button 
-                  className="btn"
-                  style={{
-                    background: '#059669',
-                    color: '#ffffff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '8px'
-                  }}
-                >
-                  <MessageCircle size={20} />
-                  WhatsApp Support
-                </button>
-                <button className="btn btn-secondary">
-                  Live Chat
-                </button>
-              </div>
-            </div>
+        </div>
 
-            {/* Why Choose Nazairo */}
-            <div style={{
-              background: 'rgba(17, 24, 39, 0.5)',
-              borderRadius: '16px',
-              padding: '32px',
-              border: '1px solid rgba(200, 160, 68, 0.2)'
-            }}>
-              <h4 style={{ 
-                fontSize: '1.25rem', 
-                fontWeight: '600', 
-                marginBottom: '16px' 
-              }}>
-                Why Choose Nazairo?
-              </h4>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {whyChooseUs.map((item, index) => (
-                  <div key={index} style={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    gap: '12px' 
-                  }}>
-                    <div style={{ color: '#C8A044' }}>
-                      {item.icon}
-                    </div>
-                    <span style={{ color: '#9CA3AF' }}>{item.text}</span>
-                  </div>
-                ))}
-              </div>
+        {/* Map Section */}
+        <div className="map-section">
+          <h2 className="map-title">Visit Our Office</h2>
+          <div className="map-container">
+            <div className="map-placeholder">
+              <MapPin size={48} />
+              <p>Interactive Map</p>
+              <span>123 Business Street, Johannesburg</span>
             </div>
           </div>
         </div>
