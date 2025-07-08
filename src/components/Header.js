@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import logo from ".././assets/naza_logo.svg" ;
 import ".././styles/Header.css";
 
-const Header = ({ activeSection, setActiveSection, onContactClick }) => {
+const Header = ({ activeSection, setActiveSection, onContactClick, onHomeClick, currentPage }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -16,8 +16,18 @@ const Header = ({ activeSection, setActiveSection, onContactClick }) => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    setActiveSection(sectionId);
+    // If we're on the contact page and trying to navigate to a section, go to home first
+    if (currentPage === 'contact' && sectionId !== 'contact') {
+      onHomeClick();
+      // Small delay to ensure we're on home page before scrolling
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        setActiveSection(sectionId);
+      }, 100);
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      setActiveSection(sectionId);
+    }
     setIsMenuOpen(false);
   };
 
@@ -27,6 +37,16 @@ const Header = ({ activeSection, setActiveSection, onContactClick }) => {
     } else {
       // Fallback to scrolling if navigation function isn't provided
       scrollToSection('contact');
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    if (onHomeClick) {
+      onHomeClick(); // Navigate to home page
+    } else {
+      // Fallback to scrolling to home section
+      scrollToSection('home');
     }
     setIsMenuOpen(false);
   };
@@ -42,7 +62,7 @@ const Header = ({ activeSection, setActiveSection, onContactClick }) => {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <nav className="nav">
-          <div className="logo" onClick={() => scrollToSection('home')}>
+          <div className="logo" onClick={handleLogoClick}>
             {/* Logo Image */}
             <div className="logo-image">
               <img 
