@@ -223,17 +223,6 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        {/* Map Section */}
-        <div className="map-section">
-          <h2 className="map-title">Visit Our Office</h2>
-          <div className="map-container">
-            <div className="map-placeholder">
-              <MapPin size={48} />
-              <p>Interactive Map</p>
-              <span>123 Business Street, Johannesburg</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
