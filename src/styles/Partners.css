@@ -1,5 +1,27 @@
 /* Minimal Partners Section - Just Logos Like Image */
 
+/* Partners Section Title */
+.partners-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.partners-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #c8a044, #f4d03f);
+  border-radius: 2px;
+}
+
 /* Minimal Partner Grid */
 .minimal-partners-grid {
   display: grid;
@@ -11,8 +33,8 @@
 }
 
 .minimal-partner-card {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
   border-radius: 12px;
   padding: 24px;
   display: flex;
@@ -21,27 +43,29 @@
   min-height: 100px;
   transition: all 0.3s ease;
   position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .minimal-partner-card:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(200, 160, 68, 0.2);
-  transform: translateY(-2px);
+  background: #fff;
+  border-color: rgba(200, 160, 68, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
-/* Partner Logo */
+/* Partner Logo - Increased Size */
 .minimal-partner-logo {
-  max-width: 100%;
-  max-height: 50px;
+  max-width: 90%;
+  max-height: 100px;
   width: auto;
   height: auto;
   object-fit: contain;
-  filter: brightness(0.9) contrast(1.1);
+  filter: brightness(0.8) contrast(1.1);
   transition: all 0.3s ease;
 }
 
 .minimal-partner-card:hover .minimal-partner-logo {
-  filter: brightness(1) contrast(1.2);
+  filter: brightness(0.9) contrast(1.2);
   transform: scale(1.05);
 }
 
@@ -51,9 +75,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 50px;
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 12px;
+  height: 100px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
   font-weight: 500;
   text-align: center;
 }
@@ -63,6 +87,10 @@
   .minimal-partners-grid {
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
+  }
+  
+  .partners-title {
+    font-size: 2.2rem;
   }
 }
 
@@ -74,12 +102,21 @@
   }
   
   .minimal-partner-card {
-    padding: 20px;
-    min-height: 80px;
+    padding: 24px;
+    min-height: 100px;
   }
   
   .minimal-partner-logo {
-    max-height: 40px;
+    max-height: 80px;
+  }
+  
+  .minimal-partner-fallback {
+    height: 80px;
+  }
+  
+  .partners-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -91,11 +128,20 @@
   }
   
   .minimal-partner-card {
-    padding: 16px;
-    min-height: 70px;
+    padding: 20px;
+    min-height: 90px;
   }
   
   .minimal-partner-logo {
-    max-height: 35px;
+    max-height: 65px;
+  }
+  
+  .minimal-partner-fallback {
+    height: 65px;
+    font-size: 12px;
+  }
+  
+  .partners-title {
+    font-size: 1.8rem;
   }
 }

@@ -5,50 +5,50 @@ const Partners = () => {
   const partners = [
     { 
       name: "NetApp", 
-      logo: "https://i.ibb.co/sJHFtWt/netapp.png" 
+      logo: "https://i.ibb.co/7N4GbkbX/netapp.png"
     },
     { 
       name: "Cloudera", 
-      logo: "https://i.ibb.co/Qvt1n0P/cloudera.png" 
+      logo: "https://i.ibb.co/tpFWcRqf/cloudera.png" 
     },
     { 
       name: "Huawei", 
-      logo: "https://i.ibb.co/jvsgKcw/huawei.png" 
+      logo: "https://i.ibb.co/C5Dhdk9h/huawei.png" 
     },
     { 
       name: "Octopus Technologies", 
-      logo: "https://i.ibb.co/qYdxKcf/octopus.png" 
+      logo: "https://i.ibb.co/DftLhvym/octopus.png" 
     },
     { 
       name: "PTPI Group", 
-      logo: "https://ibb.co/5x1ZxTT1" 
+      logo: "https://i.ibb.co/cXyqXJJy/ptpi.png" 
     },
     { 
       name: "Fujitsu", 
-      logo: "https://ibb.co/gLYmTsft" 
+      logo: "https://i.ibb.co/21JWtXCc/fujitsu.png" 
     },
     { 
       name: "Lenovo", 
-      logo: "https://ibb.co/8LwVyhWH" 
+      logo: "https://i.ibb.co/Ndqz048M/lenovo.png" 
     },
     { 
       name: "Blue Turtle", 
-      logo: "https://ibb.co/1tkvrRXW" 
+      logo: "https://i.ibb.co/VcsjgMC4/blue-turtle.png" 
     },
     { 
       name: "ETS", 
-      logo: "https://ibb.co/F4PMBS4Q" 
+      logo: "https://i.ibb.co/yF318wFz/ets.png" 
     },
     { 
       name: "RDC Technology", 
-      logo: "https://ibb.co/358rFWWP" 
+      logo: "https://i.ibb.co/4wDmSMM0/rdc.png" 
     }
   ];
 
   return (
     <section id="partners" className="section section-dark">
       <div className="container">
-        <h2 className="section-title">Trusted Partners</h2>
+        <h2 className="section-title partners-title">Trusted Partners</h2>
         {/* Partner Logos Grid - No Text */}
         <div className="minimal-partners-grid">
           {partners.map((partner, index) => (
