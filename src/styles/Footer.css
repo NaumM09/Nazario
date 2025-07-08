@@ -1,0 +1,374 @@
+/* ===================================
+   FOOTER STYLES - NAZAIRO TECHNOLOGIES
+   =================================== */
+
+.footer {
+  background: linear-gradient(135deg, #0a0a0a 0%, #111111 50%, #0f0f0f 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 60px 0 0;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #C8A044, transparent);
+}
+
+/* Container */
+.footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer Content */
+.footer-content {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 1.3fr;
+  gap: 60px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Section */
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Company Logo */
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.logo-accent {
+  color: #C8A044;
+}
+
+/* Footer Description */
+.footer-description {
+  color: #9CA3AF;
+  margin-bottom: 24px;
+  max-width: 280px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+/* Social Icons */
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #9CA3AF;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  background: rgba(200, 160, 68, 0.1);
+  border-color: rgba(200, 160, 68, 0.3);
+  color: #C8A044;
+  transform: translateY(-2px);
+}
+
+/* Footer Titles */
+.footer-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: #C8A044;
+  border-radius: 1px;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-link {
+  color: #9CA3AF;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.footer-link:hover {
+  color: #C8A044;
+  padding-left: 8px;
+}
+
+.footer-link::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 1px;
+  background: #C8A044;
+  transition: width 0.3s ease;
+}
+
+.footer-link:hover::before {
+  width: 4px;
+}
+
+/* Contact Items */
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 8px 0;
+}
+
+.contact-icon {
+  color: #C8A044;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.contact-link {
+  color: #9CA3AF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.contact-link:hover {
+  color: #C8A044;
+}
+
+.contact-text {
+  color: #9CA3AF;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  max-width: 250px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-bottom-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.copyright {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+.designer-credit {
+  color: #6B7280;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.designer-link {
+  color: #C8A044;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.designer-link:hover {
+  color: #EAB308;
+  text-decoration: underline;
+}
+
+/* Certifications - REMOVED */
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  
+  .footer-section:first-child {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+    max-width: none;
+  }
+  
+  .footer-description {
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 0 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  
+  .footer-section:first-child {
+    text-align: center;
+    margin-bottom: 0;
+  }
+  
+  .footer-description {
+    max-width: 400px;
+    margin: 0 auto 24px;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+  
+  .footer-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-bottom-content {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer .container {
+    padding: 0 16px;
+  }
+  
+  .footer-content {
+    gap: 30px;
+  }
+  
+  .footer-social {
+    gap: 12px;
+  }
+  
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .contact-item {
+    margin-bottom: 12px;
+    padding: 6px 0;
+  }
+  
+  .contact-text {
+    font-size: 0.875rem;
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .footer {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+  }
+}
+
+/* Print styles */
+@media print {
+  .footer {
+    background: none !important;
+    color: black !important;
+  }
+  
+  .footer-link,
+  .contact-link,
+  .designer-link {
+    color: black !important;
+  }
+  
+  .social-icon,
+  .cert-badge {
+    border: 1px solid black !important;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .social-icon,
+  .footer-link,
+  .contact-link,
+  .designer-link,
+  .cert-badge {
+    transition: none;
+  }
+  
+  .footer-link:hover {
+    padding-left: 0;
+  }
+  
+  .footer-link::before {
+    display: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.footer-link:focus,
+.contact-link:focus,
+.designer-link:focus,
+.social-icon:focus {
+  outline: 2px solid #C8A044;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .footer {
+    border-top: 2px solid #ffffff;
+  }
+  
+  .footer-content {
+    border-bottom: 2px solid #ffffff;
+  }
+  
+  .social-icon,
+  .cert-badge {
+    border: 2px solid #ffffff;
+  }
+}

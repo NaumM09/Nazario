@@ -1,0 +1,234 @@
+/* Header Component Styles */
+
+/* Header Container */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  padding: 16px 0;
+}
+
+.header.scrolled {
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(200, 160, 68, 0.2);
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo Styles */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* Logo Image Container */
+.logo-image {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Logo Image */
+.logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+  transform: scale(1.1);
+}
+
+/* Logo Fallback */
+.logo-fallback {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #C8A044, #EAB308);
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Logo Text */
+.logo-text-container {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.logo-text {
+  color: #C8A044;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.logo-tech {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu.mobile {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(17, 24, 39, 0.95);
+  backdrop-filter: blur(10px);
+  flex-direction: column;
+  padding: 24px;
+  gap: 16px;
+  border-top: 1px solid rgba(200, 160, 68, 0.2);
+}
+
+.nav-menu li {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation Links */
+.nav-link {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-family: inherit;
+  padding: 8px 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #C8A044;
+}
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.mobile-toggle:hover {
+  background: rgba(200, 160, 68, 0.1);
+}
+
+/* Button Styles (if not in main CSS) */
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  font-family: inherit;
+}
+
+.btn-primary {
+  background: #C8A044;
+  color: #000000;
+}
+
+.btn-primary:hover {
+  background: #EAB308;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .nav-menu.show {
+    display: flex;
+  }
+  
+  .logo-text,
+  .logo-tech {
+    font-size: 20px;
+  }
+  
+  .logo-tech {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 18px;
+  }
+  
+  .logo-image {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logo-img {
+    height: 32px;
+    max-width: 32px;
+  }
+  
+  .logo-fallback {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .logo-text {
+    font-size: 18px;
+  }
+}
