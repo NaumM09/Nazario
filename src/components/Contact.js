@@ -48,22 +48,22 @@ const Contact = () => {
     {
       icon: <Building2 />,
       title: "Our Location",
-      details: ["123 Business Street", "Johannesburg, Gauteng 2000", "South Africa"]
+      details: ["Unit 36, Carrowmore Park Norfolk Road", "Halfway Gardens, Midrand Gauteng", "South Africa","1685"]
     },
     {
       icon: <Smartphone />,
       title: "Phone Numbers",
-      details: ["+27 11 123 4567", "+27 82 987 6543"]
+      details: [ "+27 82 987 6543"]
     },
     {
       icon: <AtSign />,
       title: "Email Address",
-      details: ["info@nazairotechnologies.com", "support@nazairotechnologies.com"]
+      details: ["info@nazairotechnologies.com"]
     },
     {
       icon: <Calendar />,
       title: "Business Hours",
-      details: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 2:00 PM", "Sunday: Closed"]
+      details: ["Monday - Friday: 9:00 AM - 5:00 PM", "Saturday: Closed", "Sunday: Closed"]
     }
   ];
 
