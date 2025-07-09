@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
   Satellite, 
-  Cloud, 
   ShieldCheck, 
   Database, 
   Headphones, 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Building2, Smartphone, AtSign, Calendar, Send, CheckCircle2, MapPin } from 'lucide-react';
+import { Building2, Smartphone, AtSign, Calendar, Send, CheckCircle2 } from 'lucide-react';
 import "../styles/Contact.css";
 
 const Contact = () => {

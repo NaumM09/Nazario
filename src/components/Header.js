@@ -53,9 +53,9 @@ const Header = ({ activeSection, setActiveSection, onContactClick, onHomeClick, 
 
   const navItems = [
     { id: 'home', label: 'Home' },
+     { id: 'partners', label: 'Partners' },
     { id: 'about', label: 'About' },
     { id: 'services', label: 'Services' },
-    { id: 'partners', label: 'Partners' },
   ];
 
   return (

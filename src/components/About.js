@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle, Globe, ShieldCheck, Users, Target, Eye, Heart } from 'lucide-react';
+import { CheckCircle, Globe, ShieldCheck, Target, Eye, Heart } from 'lucide-react';
 import "../styles/About.css";
 import serviceImage from "../assets/serviceImage.png"
 
